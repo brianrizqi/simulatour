@@ -8,6 +8,10 @@ import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -15,6 +19,10 @@ import android.view.ViewGroup;
  */
 public class HomeFragment extends Fragment {
     CardView wisata, penginapan, transport, makanan, sewa;
+    private SliderPagerAdapter mAdapter;
+    private SliderIndicator mIndicator;
+    private LinearLayout mLinearLayout;
+    private SliderView sliderView;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -25,6 +33,8 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+        sliderView = (SliderView) view.findViewById(R.id.sliderView);
+        mLinearLayout = (LinearLayout) view.findViewById(R.id.pagesContainer);
         wisata = (CardView) view.findViewById(R.id.wisata);
         penginapan = (CardView) view.findViewById(R.id.penginapan);
         transport = (CardView) view.findViewById(R.id.transportasi);
@@ -65,7 +75,22 @@ public class HomeFragment extends Fragment {
                 startActivity(i);
             }
         });
+        setupSlider();
         return view;
+    }
+    private void setupSlider() {
+        sliderView.setDurationScroll(800);
+        List<Fragment> fragments = new ArrayList<>();
+        fragments.add(SliderFragment.newInstance("http://helloworlds.me/simulatour/images.png"));
+        fragments.add(SliderFragment.newInstance("http://helloworlds.me/simulatour/images2.jpg"));
+        fragments.add(SliderFragment.newInstance("http://helloworlds.me/simulatour/images3.jpg"));
+        fragments.add(SliderFragment.newInstance("http://helloworlds.me/simulatour/images4.jpg"));
+
+        mAdapter = new SliderPagerAdapter(getChildFragmentManager(), fragments);
+        sliderView.setAdapter(mAdapter);
+        mIndicator = new SliderIndicator(getActivity(), mLinearLayout, sliderView, R.drawable.indicator_slider);
+        mIndicator.setPageCount(fragments.size());
+        mIndicator.show();
     }
 
 }
