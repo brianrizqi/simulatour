@@ -26,6 +26,55 @@
             android:hint="Masukkan Jumlah Uang" />
     </android.support.design.widget.TextInputLayout>
 
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Masukkan Jumlah Hari" />
+    </android.support.design.widget.TextInputLayout>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wisata"
+        android:textColor="#333"
+        android:textSize="17dp"/>
+    <CheckBox
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gunung Ijen"/>
+    <CheckBox
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sendang Seruni"/>
+    <CheckBox
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Air Terjun Kedung Angin"/>
+    <CheckBox
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kawah Bulan Sabit"/>
+    <CheckBox
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bendungan Belanda"/>
+    <CheckBox
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rumah Pohon Pinus"/>
+
+
     <Button
         android:id="@+id/simulate"
         android:layout_width="match_parent"

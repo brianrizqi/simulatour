@@ -22,7 +22,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".HomeDetail" />
-        <activity android:name=".SimulatorDetail"></activity>
+        <activity android:name=".SimulatorDetail" />
+        <activity android:name=".About"></activity>
     </application>
 
 </manifest>
