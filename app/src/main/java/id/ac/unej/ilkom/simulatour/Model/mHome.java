@@ -2,7 +2,9 @@ package id.ac.unej.ilkom.simulatour.Model;
 
 public class mHome {
     private String id, img, judul;
+    public mHome(){
 
+    }
     public mHome(String id, String img, String judul) {
         this.id = id;
         this.img = img;
