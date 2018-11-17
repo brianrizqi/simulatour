@@ -18,7 +18,7 @@ import java.util.List;
  * A simple {@link Fragment} subclass.
  */
 public class HomeFragment extends Fragment {
-    CardView wisata, penginapan, transport, makanan, sewa;
+    CardView wisata, penginapan, transport, makanan, sewa,about;
     private SliderPagerAdapter mAdapter;
     private SliderIndicator mIndicator;
     private LinearLayout mLinearLayout;
@@ -40,10 +40,13 @@ public class HomeFragment extends Fragment {
         transport = (CardView) view.findViewById(R.id.transportasi);
         makanan = (CardView) view.findViewById(R.id.makanan);
         sewa = (CardView) view.findViewById(R.id.sewa);
+        about = (CardView) view.findViewById(R.id.about);
+        setupSlider();
         wisata.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getActivity(), HomeDetail.class);
+//                i.putExtra("detail","wisata");
                 startActivity(i);
             }
         });
@@ -51,6 +54,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getActivity(), HomeDetail.class);
+//                i.putExtra("detail","penginapan");
                 startActivity(i);
             }
         });
@@ -58,6 +62,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getActivity(), HomeDetail.class);
+//                i.putExtra("detail","transport");
                 startActivity(i);
             }
         });
@@ -65,6 +70,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getActivity(), HomeDetail.class);
+//                i.putExtra("detail","makanan");
                 startActivity(i);
             }
         });
@@ -72,10 +78,17 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getActivity(), HomeDetail.class);
+//                i.putExtra("detail","sewa");
                 startActivity(i);
             }
         });
-        setupSlider();
+        about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity(),About.class);
+                startActivity(i);
+            }
+        });
         return view;
     }
     private void setupSlider() {
