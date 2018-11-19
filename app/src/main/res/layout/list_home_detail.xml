@@ -35,6 +35,16 @@
                 android:text="Judul"
                 android:textColor="#008577"
                 android:textSize="20dp" />
+            <TextView
+                android:id="@+id/txtHarga"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/imgHome"
+                android:layout_below="@id/txtJudul"
+                android:text="harga"
+                android:textColor="#333"
+                android:textSize="17.5dp"
+                android:layout_marginLeft="5dp"/>
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 

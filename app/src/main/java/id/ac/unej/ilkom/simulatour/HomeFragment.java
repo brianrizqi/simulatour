@@ -45,40 +45,35 @@ public class HomeFragment extends Fragment {
         wisata.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(), HomeDetail.class);
-//                i.putExtra("detail","wisata");
+                Intent i = new Intent(getActivity(), Wisata.class);
                 startActivity(i);
             }
         });
         penginapan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(), HomeDetail.class);
-//                i.putExtra("detail","penginapan");
+                Intent i = new Intent(getActivity(), Penginapan.class);
                 startActivity(i);
             }
         });
         transport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(), HomeDetail.class);
-//                i.putExtra("detail","transport");
+                Intent i = new Intent(getActivity(), Transportasi.class);
                 startActivity(i);
             }
         });
         makanan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(), HomeDetail.class);
-//                i.putExtra("detail","makanan");
+                Intent i = new Intent(getActivity(), Makanan.class);
                 startActivity(i);
             }
         });
         sewa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(), HomeDetail.class);
-//                i.putExtra("detail","sewa");
+                Intent i = new Intent(getActivity(), Sewa.class);
                 startActivity(i);
             }
         });

@@ -1,9 +1,17 @@
 package id.ac.unej.ilkom.simulatour.Model;
 
-public class mHome {
-    private String id, img, judul, harga;
+public class mTransportasi {
+    private String id, img, judul,harga;
+
+    public mTransportasi(String id, String img, String judul, String harga) {
+        this.id = id;
+        this.img = img;
+        this.judul = judul;
+        this.harga = harga;
+    }
 
     public String getHarga() {
+
         return harga;
     }
 
@@ -11,15 +19,8 @@ public class mHome {
         this.harga = harga;
     }
 
-    public mHome(String id, String img, String judul, String harga) {
-
-        this.id = id;
-        this.img = img;
-        this.judul = judul;
-        this.harga = harga;
-    }
-
     public String getId() {
+
         return id;
     }
 

@@ -1,21 +1,20 @@
 package id.ac.unej.ilkom.simulatour.Model;
 
-public class mHome {
+public class mPenginapan {
     private String id, img, judul, harga;
+
+    public mPenginapan(String id, String img, String judul, String harga) {
+        this.id = id;
+        this.img = img;
+        this.judul = judul;
+        this.harga = harga;
+    }
 
     public String getHarga() {
         return harga;
     }
 
     public void setHarga(String harga) {
-        this.harga = harga;
-    }
-
-    public mHome(String id, String img, String judul, String harga) {
-
-        this.id = id;
-        this.img = img;
-        this.judul = judul;
         this.harga = harga;
     }
 
