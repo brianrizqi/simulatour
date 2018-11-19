@@ -21,9 +21,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomeDetail" />
+        <activity android:name=".Sewa" />
         <activity android:name=".SimulatorDetail" />
-        <activity android:name=".About"></activity>
+        <activity android:name=".About" />
+        <activity android:name=".Wisata" />
+        <activity android:name=".Penginapan" />
+        <activity android:name=".Transportasi" />
+        <activity android:name=".Makanan" />
+        <activity android:name=".WisataDetail" />
+        <activity android:name=".MakananDetail" />
+        <activity android:name=".SewaDetail" />
+        <activity android:name=".TransportasiDetail" />
+        <activity android:name=".PenginapanDetail"></activity>
     </application>
 
 </manifest>

@@ -1,6 +1,5 @@
 package id.ac.unej.ilkom.simulatour.Adapter;
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,16 +13,16 @@ import com.android.volley.toolbox.NetworkImageView;
 import java.util.List;
 
 import id.ac.unej.ilkom.simulatour.AppController;
-import id.ac.unej.ilkom.simulatour.Model.mHome;
+import id.ac.unej.ilkom.simulatour.Model.mMakanan;
 import id.ac.unej.ilkom.simulatour.R;
 
-public class HomeAdapter extends BaseAdapter {
+public class MakananAdapter extends BaseAdapter {
     private Context context;
-    private List<mHome> list;
+    private List<mMakanan> list;
     private LayoutInflater inflater;
     ImageLoader imageLoader = AppController.getInstance().getImageLoader();
 
-    public HomeAdapter(Context context, List<mHome> list) {
+    public MakananAdapter(Context context, List<mMakanan> list) {
         this.context = context;
         this.list = list;
     }
@@ -46,7 +45,7 @@ public class HomeAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         View v = View.inflate(context, R.layout.list_home_detail, null);
-        mHome m = list.get(i);
+        mMakanan m = list.get(i);
 
         if (inflater == null)
             inflater = (LayoutInflater) context
