@@ -7,32 +7,32 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name=".AppController"
+        android:name=".Networks.AppController"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Sewa" />
-        <activity android:name=".SimulatorDetail" />
-        <activity android:name=".About" />
-        <activity android:name=".Wisata" />
-        <activity android:name=".Penginapan" />
-        <activity android:name=".Transportasi" />
-        <activity android:name=".Makanan" />
-        <activity android:name=".WisataDetail" />
-        <activity android:name=".MakananDetail" />
-        <activity android:name=".SewaDetail" />
-        <activity android:name=".TransportasiDetail" />
-        <activity android:name=".PenginapanDetail"></activity>
+        <activity android:name=".Activities.SewaActivity" />
+        <activity android:name=".Activities.SimulatorDetailActivity" />
+        <activity android:name=".Activities.AboutActivity" />
+        <activity android:name=".Activities.WisataActivity" />
+        <activity android:name=".Activities.PenginapanActivity" />
+        <activity android:name=".Activities.TransportasiActivity" />
+        <activity android:name=".Activities.MakananActivity" />
+        <activity android:name=".Activities.WisataDetailActivity" />
+        <activity android:name=".Activities.MakananDetailActivity" />
+        <activity android:name=".Activities.SewaDetailActivity" />
+        <activity android:name=".Activities.TransportasiDetailActivity" />
+        <activity android:name=".Activities.PenginapanDetailActivity"></activity>
     </application>
 
 </manifest>
