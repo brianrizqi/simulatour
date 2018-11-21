@@ -7,15 +7,15 @@ import android.view.View;
 
 import id.ac.unej.ilkom.simulatour.R;
 
-public class SewaDetail extends AppCompatActivity {
+public class MakananDetailActivity extends AppCompatActivity {
     private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sewa_detail);
+        setContentView(R.layout.activity_makanan_detail);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Motor");
+        getSupportActionBar().setTitle("Rujak Soto");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);

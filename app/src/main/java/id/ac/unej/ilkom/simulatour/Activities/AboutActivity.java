@@ -7,7 +7,7 @@ import android.widget.Button;
 
 import id.ac.unej.ilkom.simulatour.R;
 
-public class About extends AppCompatActivity {
+public class AboutActivity extends AppCompatActivity {
     private Button back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

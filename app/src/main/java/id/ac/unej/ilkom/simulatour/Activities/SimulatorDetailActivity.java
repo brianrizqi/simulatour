@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import id.ac.unej.ilkom.simulatour.R;
 
-public class SimulatorDetail extends AppCompatActivity {
+public class SimulatorDetailActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -7,15 +7,15 @@ import android.view.View;
 
 import id.ac.unej.ilkom.simulatour.R;
 
-public class MakananDetail extends AppCompatActivity {
+public class PenginapanDetailActivity extends AppCompatActivity {
     private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_makanan_detail);
+        setContentView(R.layout.activity_penginapan_detail);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Rujak Soto");
+        getSupportActionBar().setTitle("Ijen Resort");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);

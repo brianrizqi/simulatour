@@ -7,7 +7,7 @@ import android.view.View;
 
 import id.ac.unej.ilkom.simulatour.R;
 
-public class TransportasiDetail extends AppCompatActivity {
+public class TransportasiDetailActivity extends AppCompatActivity {
     private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -14,7 +14,7 @@ import id.ac.unej.ilkom.simulatour.Adapters.WisataAdapter;
 import id.ac.unej.ilkom.simulatour.Models.mWisata;
 import id.ac.unej.ilkom.simulatour.R;
 
-public class Wisata extends AppCompatActivity {
+public class WisataActivity extends AppCompatActivity {
     private ListView listView;
     private WisataAdapter adapter;
     private List<mWisata> list;
@@ -33,7 +33,7 @@ public class Wisata extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 mWisata m = list.get(i);
-                Intent ii = new Intent(getApplicationContext(),WisataDetail.class);
+                Intent ii = new Intent(getApplicationContext(),WisataDetailActivity.class);
                 startActivity(ii);
             }
         });
