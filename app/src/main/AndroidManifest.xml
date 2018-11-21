@@ -21,18 +21,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.Sewa" />
-        <activity android:name=".Activities.SimulatorDetail" />
-        <activity android:name=".Activities.About" />
-        <activity android:name=".Activities.Wisata" />
-        <activity android:name=".Activities.Penginapan" />
-        <activity android:name=".Activities.Transportasi" />
-        <activity android:name=".Activities.Makanan" />
-        <activity android:name=".Activities.WisataDetail" />
-        <activity android:name=".Activities.MakananDetail" />
-        <activity android:name=".Activities.SewaDetail" />
-        <activity android:name=".Activities.TransportasiDetail" />
-        <activity android:name=".Activities.PenginapanDetail"></activity>
+        <activity android:name=".Activities.SewaActivity" />
+        <activity android:name=".Activities.SimulatorDetailActivity" />
+        <activity android:name=".Activities.AboutActivity" />
+        <activity android:name=".Activities.WisataActivity" />
+        <activity android:name=".Activities.PenginapanActivity" />
+        <activity android:name=".Activities.TransportasiActivity" />
+        <activity android:name=".Activities.MakananActivity" />
+        <activity android:name=".Activities.WisataDetailActivity" />
+        <activity android:name=".Activities.MakananDetailActivity" />
+        <activity android:name=".Activities.SewaDetailActivity" />
+        <activity android:name=".Activities.TransportasiDetailActivity" />
+        <activity android:name=".Activities.PenginapanDetailActivity"></activity>
     </application>
 
 </manifest>

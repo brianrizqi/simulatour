@@ -13,12 +13,12 @@ import android.widget.LinearLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-import id.ac.unej.ilkom.simulatour.Activities.About;
-import id.ac.unej.ilkom.simulatour.Activities.Makanan;
-import id.ac.unej.ilkom.simulatour.Activities.Penginapan;
-import id.ac.unej.ilkom.simulatour.Activities.Sewa;
-import id.ac.unej.ilkom.simulatour.Activities.Transportasi;
-import id.ac.unej.ilkom.simulatour.Activities.Wisata;
+import id.ac.unej.ilkom.simulatour.Activities.AboutActivity;
+import id.ac.unej.ilkom.simulatour.Activities.MakananActivity;
+import id.ac.unej.ilkom.simulatour.Activities.PenginapanActivity;
+import id.ac.unej.ilkom.simulatour.Activities.SewaActivity;
+import id.ac.unej.ilkom.simulatour.Activities.TransportasiActivity;
+import id.ac.unej.ilkom.simulatour.Activities.WisataActivity;
 import id.ac.unej.ilkom.simulatour.R;
 import id.ac.unej.ilkom.simulatour.SliderIndicator;
 import id.ac.unej.ilkom.simulatour.Adapters.SliderPagerAdapter;
@@ -56,42 +56,42 @@ public class HomeFragment extends Fragment {
         wisata.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(), Wisata.class);
+                Intent i = new Intent(getActivity(), WisataActivity.class);
                 startActivity(i);
             }
         });
         penginapan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(), Penginapan.class);
+                Intent i = new Intent(getActivity(), PenginapanActivity.class);
                 startActivity(i);
             }
         });
         transport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(), Transportasi.class);
+                Intent i = new Intent(getActivity(), TransportasiActivity.class);
                 startActivity(i);
             }
         });
         makanan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(), Makanan.class);
+                Intent i = new Intent(getActivity(), MakananActivity.class);
                 startActivity(i);
             }
         });
         sewa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(), Sewa.class);
+                Intent i = new Intent(getActivity(), SewaActivity.class);
                 startActivity(i);
             }
         });
         about.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(),About.class);
+                Intent i = new Intent(getActivity(),AboutActivity.class);
                 startActivity(i);
             }
         });

@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import id.ac.unej.ilkom.simulatour.Activities.SimulatorDetail;
+import id.ac.unej.ilkom.simulatour.Activities.SimulatorDetailActivity;
 import id.ac.unej.ilkom.simulatour.R;
 
 
@@ -32,7 +32,7 @@ public class SimulatorFragment extends Fragment {
         simulate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(), SimulatorDetail.class);
+                Intent i = new Intent(getActivity(), SimulatorDetailActivity.class);
                 startActivity(i);
             }
         });

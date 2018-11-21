@@ -10,19 +10,32 @@ import android.widget.TextView;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 
+import butterknife.BindView;
+import id.ac.unej.ilkom.simulatour.Models.Wisata;
 import id.ac.unej.ilkom.simulatour.Networks.AppController;
 import id.ac.unej.ilkom.simulatour.Models.mWisata;
 import id.ac.unej.ilkom.simulatour.R;
 
 public class WisataAdapter extends BaseAdapter {
     private Context context;
-    private List<mWisata> list;
+    private List<Wisata> list;
     private LayoutInflater inflater;
+
+ /*   @BindView(R.id.imgHome)
+    NetworkImageView imgHome;
+
+    @BindView(R.id.txtJudul)
+    TextView txtJudul;
+
+    @BindView(R.id.txtHarga)
+    TextView txtHarga;*/
     ImageLoader imageLoader = AppController.getInstance().getImageLoader();
 
-    public WisataAdapter(Context context, List<mWisata> list) {
+    public WisataAdapter(Context context, List<Wisata> list) {
         this.context = context;
         this.list = list;
     }
@@ -45,7 +58,9 @@ public class WisataAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         View v = View.inflate(context, R.layout.list_home_detail, null);
-        mWisata m = list.get(i);
+        Wisata m = list.get(i);
+        Locale localeID = new Locale("in", "ID");
+        NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
 
         if (inflater == null)
             inflater = (LayoutInflater) context
@@ -55,13 +70,14 @@ public class WisataAdapter extends BaseAdapter {
         if (imageLoader == null)
             imageLoader = AppController.getInstance().getImageLoader();
 
-        NetworkImageView imgHome = (NetworkImageView) view.findViewById(R.id.imgHome);
-        TextView txtJudul = (TextView) view.findViewById(R.id.txtJudul);
-        TextView txtHarga = (TextView) view.findViewById(R.id.txtHarga);
-        txtHarga.setText("Rp."+m.getHarga());
-        imgHome.setImageUrl(m.getImg(), imageLoader);
-        txtJudul.setText(m.getJudul());
-        v.setTag(m.getId());
+        NetworkImageView imgHome = (NetworkImageView) v.findViewById(R.id.imgHome);
+        TextView txtJudul = (TextView) v.findViewById(R.id.txtJudul);
+        TextView txtHarga = (TextView) v.findViewById(R.id.txtHarga);
+
+        txtHarga.setText(formatRupiah.format(Double.parseDouble(m.getHargaTiket())));
+        imgHome.setImageUrl(m.getFoto(), imageLoader);
+        txtJudul.setText(m.getNama());
+        v.setTag(m.getIdWisata());
         return v;
     }
 }
