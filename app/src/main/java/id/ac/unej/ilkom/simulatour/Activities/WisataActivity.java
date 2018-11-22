@@ -88,10 +88,10 @@ public class WisataActivity extends AppCompatActivity {
     }
 
     public void getWisata() {
-        pDialog = new ProgressDialog(getApplicationContext());
+        pDialog = new ProgressDialog(this);
         // Showing progress dialog before making http request
         pDialog.setMessage("Loading...");
-//        pDialog.show();
+        pDialog.show();
         list.clear();
 
 
