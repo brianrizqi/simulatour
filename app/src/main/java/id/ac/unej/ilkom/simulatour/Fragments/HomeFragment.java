@@ -13,6 +13,8 @@ import android.widget.LinearLayout;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import id.ac.unej.ilkom.simulatour.Activities.AboutActivity;
 import id.ac.unej.ilkom.simulatour.Activities.MakananActivity;
 import id.ac.unej.ilkom.simulatour.Activities.PenginapanActivity;
@@ -29,11 +31,36 @@ import id.ac.unej.ilkom.simulatour.SliderView;
  * A simple {@link Fragment} subclass.
  */
 public class HomeFragment extends Fragment {
-    CardView wisata, penginapan, transport, makanan, sewa,about;
+    //CardView wisata, penginapan, transport, makanan, sewa,about;
+
+    @BindView(R.id.wisata)
+    CardView wisata;
+
+    @BindView(R.id.penginapan)
+    CardView penginapan;
+
+    @BindView(R.id.transportasi)
+    CardView transportasi;
+
+    @BindView(R.id.makanan)
+    CardView makanan;
+
+    @BindView(R.id.sewa)
+    CardView sewa;
+
+    @BindView(R.id.about)
+    CardView about;
+
+    @BindView(R.id.pagesContainer)
+    LinearLayout mLinearLayout;
+
+    @BindView(R.id.sliderView)
+    SliderView sliderView;
+
     private SliderPagerAdapter mAdapter;
     private SliderIndicator mIndicator;
-    private LinearLayout mLinearLayout;
-    private SliderView sliderView;
+   /* private LinearLayout mLinearLayout;
+    private SliderView sliderView;*/
 
     public HomeFragment() {
         // Required empty public constructor
@@ -44,14 +71,15 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-        sliderView = (SliderView) view.findViewById(R.id.sliderView);
+        ButterKnife.bind(this,view);
+       /* sliderView = (SliderView) view.findViewById(R.id.sliderView);
         mLinearLayout = (LinearLayout) view.findViewById(R.id.pagesContainer);
         wisata = (CardView) view.findViewById(R.id.wisata);
         penginapan = (CardView) view.findViewById(R.id.penginapan);
         transport = (CardView) view.findViewById(R.id.transportasi);
         makanan = (CardView) view.findViewById(R.id.makanan);
         sewa = (CardView) view.findViewById(R.id.sewa);
-        about = (CardView) view.findViewById(R.id.about);
+        about = (CardView) view.findViewById(R.id.about);*/
         setupSlider();
         wisata.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,7 +95,7 @@ public class HomeFragment extends Fragment {
                 startActivity(i);
             }
         });
-        transport.setOnClickListener(new View.OnClickListener() {
+        transportasi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getActivity(), TransportasiActivity.class);
