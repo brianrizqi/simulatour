@@ -1,35 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fff"
     android:orientation="vertical"
     android:padding="10dp"
-    android:background="#fff"
     tools:context=".Activities.AboutActivity">
+
+    <RelativeLayout
+        android:id="@+id/relay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#FFF"
+            app:theme="@style/ToolbarTheme" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="About"
+            android:textAlignment="center"
+            android:textColor="#00574B"
+            android:textSize="30dp" />
+
+    </RelativeLayout>
+
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#00574B"
-        android:text="About"
-        android:textAlignment="center"
-        android:textSize="30dp"/>
-    <TextView
         android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:text="Simulatour adalah aplikasi simulasi untuk"
-        android:textSize="17.5dp"
-        android:textColor="#333"/>
-    <Button
-        android:id="@+id/btnBack"
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button"
-        android:textColor="#fff"
-        android:text="Back"/>
+        android:textColor="#333"
+        android:textSize="17.5dp" />
 
 </LinearLayout>
