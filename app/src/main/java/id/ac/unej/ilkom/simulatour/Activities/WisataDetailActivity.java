@@ -13,6 +13,7 @@ import com.android.volley.toolbox.NetworkImageView;
 import butterknife.BindView;
 import id.ac.unej.ilkom.simulatour.Models.Wisata;
 import id.ac.unej.ilkom.simulatour.Networks.AppController;
+import id.ac.unej.ilkom.simulatour.Networks.BaseApi;
 import id.ac.unej.ilkom.simulatour.R;
 
 public class WisataDetailActivity extends AppCompatActivity {
@@ -23,7 +24,7 @@ public class WisataDetailActivity extends AppCompatActivity {
 
     @BindView(R.id.txtDeskripsi)
     TextView txtDeskripsi;
-    ImageLoader imageLoader = AppController.getInstance().getImageLoader();
+    ImageLoader imageLoader ;
     private Wisata wisata;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +34,9 @@ public class WisataDetailActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         wisata = (Wisata) getIntent().getSerializableExtra("wisata");
-
+        imageLoader  = AppController.getInstance().getImageLoader();
         getSupportActionBar().setTitle(wisata.getNama());
-        img.setImageUrl(wisata.getFoto(),imageLoader);
+        img.setImageUrl(BaseApi.imageURL+wisata.getFoto(),imageLoader);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
