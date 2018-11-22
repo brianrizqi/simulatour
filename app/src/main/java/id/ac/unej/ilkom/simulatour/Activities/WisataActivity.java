@@ -81,6 +81,7 @@ public class WisataActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Wisata m = list.get(i);
                 Intent intent = new Intent(WisataActivity.this, WisataDetailActivity.class);
+                intent.putExtra("wisata",m);
                 startActivity(intent);
             }
         });

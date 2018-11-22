@@ -9,6 +9,10 @@ public class BaseApi {
      *
      * http://192.168.43.241 wifi
      *
+     * http://192.168.101.18 wifi hares
+     *
+     * http://10.132.0.159 hotspot unej
+     *
      * http://192.168.137.1 LAN
      *
      * http://209.97.170.199:8000/api/sinergiin/ => sofyan
@@ -16,7 +20,7 @@ public class BaseApi {
 
 
 
-    public static final String BaseURL = "http://192.168.43.241/simulatour/";
+    public static final String BaseURL = "http://192.168.101.18/simulatour/";
 
 
     public static final String getAllWisata=BaseURL+"paket.php?fun=get_all_wisata";

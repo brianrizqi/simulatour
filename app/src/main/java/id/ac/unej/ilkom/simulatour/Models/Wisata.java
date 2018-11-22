@@ -3,8 +3,10 @@ package id.ac.unej.ilkom.simulatour.Models;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 
-public class Wisata{
+
+public class Wisata implements Serializable {
 
 	@SerializedName("harga_tiket")
 	private String hargaTiket;
