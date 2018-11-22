@@ -4,9 +4,11 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.android.volley.AuthFailureError;
@@ -35,12 +37,15 @@ import id.ac.unej.ilkom.simulatour.Networks.BaseApi;
 import id.ac.unej.ilkom.simulatour.R;
 
 public class WisataActivity extends AppCompatActivity {
-       @BindView(R.id.listHome)
-       ListView listView;
+    @BindView(R.id.listHome)
+    ListView listView;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+    @BindView(R.id.titleMain)
+    Button button;
 
     private WisataAdapter adapter;
     private List<Wisata> list;
-    private String detail;
     private ProgressDialog pDialog;
 
     @Override
@@ -48,6 +53,19 @@ public class WisataActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wisata);
         ButterKnife.bind(this);
+        button.setText("Wisata");
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onBackPressed();
+                    finish();
+                }
+            });
+        }
         list = new ArrayList<>();
 
         /*listView = (ListView) findViewById(R.id.listHome);*/
