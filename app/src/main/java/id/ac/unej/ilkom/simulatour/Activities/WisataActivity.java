@@ -81,16 +81,17 @@ public class WisataActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Wisata m = list.get(i);
                 Intent intent = new Intent(WisataActivity.this, WisataDetailActivity.class);
+                intent.putExtra("wisata",m);
                 startActivity(intent);
             }
         });
     }
 
     public void getWisata() {
-        pDialog = new ProgressDialog(getApplicationContext());
+        pDialog = new ProgressDialog(this);
         // Showing progress dialog before making http request
         pDialog.setMessage("Loading...");
-//        pDialog.show();
+        pDialog.show();
         list.clear();
 
 
