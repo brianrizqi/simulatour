@@ -1,11 +1,13 @@
 package id.ac.unej.ilkom.simulatour.Activities;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -72,6 +74,16 @@ public class PenginapanActivity extends AppCompatActivity {
         adapter = new PenginapanAdapter(this, list);
         listView.setAdapter(adapter);
         getPenginapan();
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Penginapan m = list.get(i);
+                Intent intent = new Intent(PenginapanActivity.this, PenginapanDetailActivity.class);
+                intent.putExtra("penginapan",m);
+                startActivity(intent);
+            }
+        });
     }
     public void getPenginapan() {
         pDialog = new ProgressDialog(this);
