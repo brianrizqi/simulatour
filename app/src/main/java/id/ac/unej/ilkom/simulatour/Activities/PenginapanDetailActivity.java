@@ -35,7 +35,7 @@ public class PenginapanDetailActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(penginapan.getNama());
         img.setImageUrl(penginapan.getFoto(),imageLoader);
-        
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
