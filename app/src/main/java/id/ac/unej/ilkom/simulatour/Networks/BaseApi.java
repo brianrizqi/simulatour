@@ -25,6 +25,10 @@ public class BaseApi {
 
     public static final String getAllWisata=BaseURL+"paket.php?fun=get_all_wisata";
     public static final String getAllPenginapan=BaseURL+"paket.php?fun=get_all_penginapan";
+    public static final String getSimulasi=BaseURL+"paket.php?fun=get_simulation";
+
+    public static final String getPaket=BaseURL+"paket.php?fun=get_paket";
+
 
 
 

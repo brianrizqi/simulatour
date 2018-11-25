@@ -32,7 +32,8 @@
         <activity android:name=".Activities.MakananDetailActivity" />
         <activity android:name=".Activities.SewaDetailActivity" />
         <activity android:name=".Activities.TransportasiDetailActivity" />
-        <activity android:name=".Activities.PenginapanDetailActivity"></activity>
+        <activity android:name=".Activities.PenginapanDetailActivity" />
+        <activity android:name=".Activities.SimulatorActivity"></activity>
     </application>
 
 </manifest>
