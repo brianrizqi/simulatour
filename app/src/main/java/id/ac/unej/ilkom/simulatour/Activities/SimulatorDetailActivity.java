@@ -40,9 +40,9 @@ public class SimulatorDetailActivity extends AppCompatActivity {
 
         simulasi = (Simulasi) getIntent().getSerializableExtra("simulasi");
 
-        getSupportActionBar().setTitle(simulasi.getNamaPaket());
+        getSupportActionBar().setTitle(simulasi.getNama());
         img.setImageUrl(simulasi.getFoto(),imageLoader);
-        txtDeskripsi.setText(Html.fromHtml(simulasi.getDeskripsi()));
+        //txtDeskripsi.setText(Html.fromHtml(simulasi.getDeskripsi()));
 
         //Toast.makeText(this,wisata.getFoto(),Toast.LENGTH_LONG).show();
 

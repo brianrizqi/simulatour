@@ -1,6 +1,5 @@
 package id.ac.unej.ilkom.simulatour.Models;
 
-
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
@@ -8,23 +7,39 @@ import java.io.Serializable;
 
 public class Simulasi implements Serializable {
 
+	@SerializedName("nama")
+	private String nama;
+
 	@SerializedName("harga")
 	private String harga;
 
 	@SerializedName("foto")
 	private String foto;
 
-	@SerializedName("id_paket")
-	private String idPaket;
+	@SerializedName("jenis")
+	private String jenis;
 
-	@SerializedName("deskripsi")
-	private String deskripsi;
+	@SerializedName("label")
+	private String label;
 
-	@SerializedName("nama_paket")
-	private String namaPaket;
+	public String getKeterangan() {
+		return keterangan;
+	}
 
-	@SerializedName("durasi")
-	private String durasi;
+	public void setKeterangan(String keterangan) {
+		this.keterangan = keterangan;
+	}
+
+	@SerializedName("keterangan")
+	private String keterangan;
+
+	public void setNama(String nama){
+		this.nama = nama;
+	}
+
+	public String getNama(){
+		return nama;
+	}
 
 	public void setHarga(String harga){
 		this.harga = harga;
@@ -42,48 +57,31 @@ public class Simulasi implements Serializable {
 		return foto;
 	}
 
-	public void setIdPaket(String idPaket){
-		this.idPaket = idPaket;
+	public void setJenis(String jenis){
+		this.jenis = jenis;
 	}
 
-	public String getIdPaket(){
-		return idPaket;
+	public String getJenis(){
+		return jenis;
 	}
 
-	public void setDeskripsi(String deskripsi){
-		this.deskripsi = deskripsi;
+	public void setLabel(String label){
+		this.label = label;
 	}
 
-	public String getDeskripsi(){
-		return deskripsi;
-	}
-
-	public void setNamaPaket(String namaPaket){
-		this.namaPaket = namaPaket;
-	}
-
-	public String getNamaPaket(){
-		return namaPaket;
-	}
-
-	public void setDurasi(String durasi){
-		this.durasi = durasi;
-	}
-
-	public String getDurasi(){
-		return durasi;
+	public String getLabel(){
+		return label;
 	}
 
 	@Override
  	public String toString(){
 		return 
 			"Simulasi{" + 
-			"harga = '" + harga + '\'' + 
+			"nama = '" + nama + '\'' + 
+			",harga = '" + harga + '\'' + 
 			",foto = '" + foto + '\'' + 
-			",id_paket = '" + idPaket + '\'' + 
-			",deskripsi = '" + deskripsi + '\'' + 
-			",nama_paket = '" + namaPaket + '\'' + 
-			",durasi = '" + durasi + '\'' + 
+			",jenis = '" + jenis + '\'' + 
+			",label = '" + label + '\'' + 
 			"}";
 		}
 }
