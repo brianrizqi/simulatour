@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.SimulatorActivity"
+    android:background="#fff"
+    android:orientation="vertical"
+    >
+    <RelativeLayout
+        android:id="@+id/relay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            app:theme="@style/ToolbarTheme"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#FFF" />
+
+        <Button
+            android:id="@+id/titleMain"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/button"
+            android:text="Simulasi"
+            android:textColor="#FFF" />
+
+    </RelativeLayout>
+    <ListView
+        android:layout_below="@id/relay"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:id="@+id/listSimulasi"
+        android:layout_marginBottom="5dp"
+        >
+
+    </ListView>
+    <TextView
+        android:id="@+id/error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="404\nNot Found"
+        android:textAlignment="center"
+        android:textSize="30pt"
+        android:visibility="gone"
+        />
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:padding="5dp"
+        >
+        <TextView
+            android:id="@+id/totalHarga"
+            android:paddingLeft="10dp"
+            android:layout_width="180dp"
+            android:layout_height="match_parent"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:text="Rp.0"
+            android:textSize="22dp"/>
+        <Button
+            android:id="@+id/btnReSimulate"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:background="@color/colorPrimary"
+            android:text="Re-Simulasi"
+            android:textColor="#fff" />
+
+
+    </RelativeLayout>
+
+</LinearLayout>

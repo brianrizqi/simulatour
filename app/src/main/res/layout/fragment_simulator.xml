@@ -21,9 +21,12 @@
         android:layout_marginTop="20dp">
 
         <EditText
+            android:id="@+id/jumlahUang"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Masukkan Jumlah Uang" />
+            android:hint="Masukkan Jumlah Uang"
+            android:inputType="number"
+            />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -32,11 +35,13 @@
         android:layout_marginTop="10dp">
 
         <EditText
+            android:id="@+id/jumlahHari"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="number"
             android:hint="Masukkan Jumlah Hari" />
     </android.support.design.widget.TextInputLayout>
-    <TextView
+    <!--<TextView
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -72,7 +77,7 @@
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Rumah Pohon Pinus"/>
+        android:text="Rumah Pohon Pinus"/>-->
 
 
     <Button
