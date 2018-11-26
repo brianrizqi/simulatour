@@ -10,19 +10,22 @@ import android.widget.TextView;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 
+import id.ac.unej.ilkom.simulatour.Models.Makanan;
 import id.ac.unej.ilkom.simulatour.Networks.AppController;
 import id.ac.unej.ilkom.simulatour.Models.mMakanan;
 import id.ac.unej.ilkom.simulatour.R;
 
 public class MakananAdapter extends BaseAdapter {
     private Context context;
-    private List<mMakanan> list;
+    private List<Makanan> list;
     private LayoutInflater inflater;
     ImageLoader imageLoader = AppController.getInstance().getImageLoader();
 
-    public MakananAdapter(Context context, List<mMakanan> list) {
+    public MakananAdapter(Context context, List<Makanan> list) {
         this.context = context;
         this.list = list;
     }
@@ -45,7 +48,9 @@ public class MakananAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         View v = View.inflate(context, R.layout.list_home_detail, null);
-        mMakanan m = list.get(i);
+        Makanan m = list.get(i);
+        Locale localeID = new Locale("in", "ID");
+        NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
 
         if (inflater == null)
             inflater = (LayoutInflater) context
@@ -55,13 +60,14 @@ public class MakananAdapter extends BaseAdapter {
         if (imageLoader == null)
             imageLoader = AppController.getInstance().getImageLoader();
 
-        NetworkImageView imgHome = (NetworkImageView) view.findViewById(R.id.imgHome);
-        TextView txtJudul = (TextView) view.findViewById(R.id.txtJudul);
-        TextView txtHarga = (TextView) view.findViewById(R.id.txtHarga);
-        txtHarga.setText("Rp."+m.getHarga());
-        imgHome.setImageUrl(m.getImg(), imageLoader);
-        txtJudul.setText(m.getJudul());
-        v.setTag(m.getId());
+        NetworkImageView imgHome = (NetworkImageView) v.findViewById(R.id.imgHome);
+        TextView txtJudul = (TextView) v.findViewById(R.id.txtJudul);
+        TextView txtHarga = (TextView) v.findViewById(R.id.txtHarga);
+
+        txtHarga.setText(formatRupiah.format(Double.parseDouble(m.getHarga())));
+        imgHome.setImageUrl(m.getFoto(), imageLoader);
+        txtJudul.setText(m.getNama());
+        v.setTag(m.getIdMakanan());
         return v;
     }
 }

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.SimulatorActivity"
     android:background="#fff"
     android:orientation="vertical"
-    >
+    tools:context=".Activities.SimulatorActivity">
+
     <RelativeLayout
         android:id="@+id/relay"
         android:layout_width="match_parent"
@@ -16,10 +16,10 @@
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
-            app:theme="@style/ToolbarTheme"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="#FFF" />
+            android:background="#FFF"
+            app:theme="@style/ToolbarTheme" />
 
         <Button
             android:id="@+id/titleMain"
@@ -33,14 +33,15 @@
 
     </RelativeLayout>
     <ListView
-        android:layout_below="@id/relay"
-        android:layout_width="match_parent"
-        android:layout_height="450dp"
         android:id="@+id/listSimulasi"
-        android:layout_marginBottom="5dp"
-        >
+        android:layout_width="match_parent"
+        android:layout_height="438dp"
+        android:layout_below="@id/relay"
+        android:layout_marginBottom="5dp">
 
     </ListView>
+
+
     <TextView
         android:id="@+id/error"
         android:layout_width="match_parent"
@@ -48,24 +49,26 @@
         android:text="404\nNot Found"
         android:textAlignment="center"
         android:textSize="30pt"
-        android:visibility="gone"
-        />
+        android:visibility="gone" />
+
     <RelativeLayout
-        android:layout_marginTop="10dp"
+        android:id="@+id/resimulate"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        android:padding="5dp"
-        >
+        android:layout_marginTop="10dp"
+        android:padding="5dp">
+
         <TextView
             android:id="@+id/totalHarga"
-            android:paddingLeft="10dp"
             android:layout_width="180dp"
             android:layout_height="match_parent"
-            android:textColor="@color/colorPrimary"
-            android:textStyle="bold"
+            android:paddingLeft="10dp"
             android:text="Rp.0"
-            android:textSize="22dp"/>
+            android:textColor="@color/colorPrimary"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+
         <Button
             android:id="@+id/btnReSimulate"
             android:layout_width="150dp"
@@ -79,4 +82,4 @@
 
     </RelativeLayout>
 
-</LinearLayout>
+</RelativeLayout>
