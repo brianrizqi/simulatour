@@ -140,7 +140,11 @@ public class SimulatorActivity extends AppCompatActivity {
 
                                 if (!objSimulasi.getString("label").equalsIgnoreCase("wisata")){
                                     s.setKeterangan("(untuk "+hari+" hari)");
+                                     if (objSimulasi.getString("label").equalsIgnoreCase("makanan")){
+                                        s.setKeterangan("(untuk 1 kali makan)");
+                                    }
                                 }
+
                                 totalHarga +=Double.parseDouble(objSimulasi.getString("harga"));
 
                                 list.add(s);
