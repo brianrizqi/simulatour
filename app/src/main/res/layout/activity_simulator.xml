@@ -42,14 +42,14 @@
     </ListView>
 
 
-    <TextView
+    <ImageView
         android:id="@+id/error"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="404\nNot Found"
-        android:textAlignment="center"
-        android:textSize="30pt"
-        android:visibility="gone" />
+        android:src="@mipmap/error"
+        android:visibility="gone"
+        />
+
 
     <RelativeLayout
         android:id="@+id/resimulate"

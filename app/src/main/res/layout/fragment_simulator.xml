@@ -25,8 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Masukkan Jumlah Uang"
-            android:inputType="number"
-            />
+            android:inputType="number" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -38,47 +37,48 @@
             android:id="@+id/jumlahHari"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number"
-            android:hint="Masukkan Jumlah Hari" />
+            android:hint="Masukkan Jumlah Hari"
+            android:inputType="number" />
     </android.support.design.widget.TextInputLayout>
-    <!--<TextView
-        android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Wisata"
-        android:textColor="#333"
-        android:textSize="17dp"/>
-    <CheckBox
-        android:layout_marginTop="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Gunung Ijen"/>
-    <CheckBox
-        android:layout_marginTop="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Sendang Seruni"/>
-    <CheckBox
-        android:layout_marginTop="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Air Terjun Kedung Angin"/>
-    <CheckBox
-        android:layout_marginTop="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Kawah Bulan Sabit"/>
-    <CheckBox
-        android:layout_marginTop="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Bendungan Belanda"/>
-    <CheckBox
-        android:layout_marginTop="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Rumah Pohon Pinus"/>-->
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Dari : "
+        android:textColor="#333"
+        android:textSize="17.5dp" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/radioPelabuhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Pelabuhan Ketapang" />
+
+        <RadioButton
+            android:id="@+id/radioTerminal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Terminal Karangente" />
+
+        <RadioButton
+            android:id="@+id/radioStasiun"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Stasiun Karangasem" />
+
+        <RadioButton
+            android:id="@+id/radioBandara"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bandara Belimbingsari" />
+    </RadioGroup>
 
     <Button
         android:id="@+id/simulate"

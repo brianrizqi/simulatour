@@ -14,13 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".Activities.MainActivity"/>
         <activity android:name=".Activities.SewaActivity" />
         <activity android:name=".Activities.SimulatorDetailActivity" />
         <activity android:name=".Activities.AboutActivity" />
@@ -33,7 +27,14 @@
         <activity android:name=".Activities.SewaDetailActivity" />
         <activity android:name=".Activities.TransportasiDetailActivity" />
         <activity android:name=".Activities.PenginapanDetailActivity" />
-        <activity android:name=".Activities.SimulatorActivity"></activity>
+        <activity android:name=".Activities.SimulatorActivity" />
+        <activity android:name=".Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

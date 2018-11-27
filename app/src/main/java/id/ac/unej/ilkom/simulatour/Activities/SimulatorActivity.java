@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -51,11 +52,11 @@ public class SimulatorActivity extends AppCompatActivity {
     @BindView(R.id.totalHarga)
     TextView txtTotalHarga;
     @BindView(R.id.error)
-    TextView txtError;
+    ImageView txtError;
 
 
 
-    private String jumlahHari,jumlahUang;
+    private String jumlahHari,jumlahUang,tranport;
 
 
     private SimulasiAdapter adapter;
@@ -74,7 +75,7 @@ public class SimulatorActivity extends AppCompatActivity {
 
         jumlahUang = getIntent().getStringExtra("jumlahUang");
         jumlahHari = getIntent().getStringExtra("jumlahHari");
-
+        tranport = getIntent().getStringExtra("transport");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         if (getSupportActionBar() != null) {
@@ -142,7 +143,9 @@ public class SimulatorActivity extends AppCompatActivity {
                                     s.setKeterangan("(untuk "+hari+" hari)");
                                      if (objSimulasi.getString("label").equalsIgnoreCase("makanan")){
                                         s.setKeterangan("(untuk 1 kali makan)");
-                                    }
+                                    } else if (objSimulasi.getString("label").equalsIgnoreCase("transportasi")){
+                                         s.setKeterangan("");
+                                     }
                                 }
 
                                 totalHarga +=Double.parseDouble(objSimulasi.getString("harga"));
@@ -176,6 +179,7 @@ public class SimulatorActivity extends AppCompatActivity {
 
                 map.put("durasi",hari);
                 map.put("harga",uang);
+                map.put("id_transportasi",tranport);
                 return map;
             }
         };
