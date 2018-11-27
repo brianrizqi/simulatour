@@ -144,7 +144,7 @@ public class SimulatorActivity extends AppCompatActivity {
                                      if (objSimulasi.getString("label").equalsIgnoreCase("makanan")){
                                         s.setKeterangan("(untuk 1 kali makan)");
                                     } else if (objSimulasi.getString("label").equalsIgnoreCase("transportasi")){
-                                         s.setKeterangan("");
+                                         s.setKeterangan("(dari "+objSimulasi.getString("nama")+" ke Tamansari)");
                                      }
                                 }
 
