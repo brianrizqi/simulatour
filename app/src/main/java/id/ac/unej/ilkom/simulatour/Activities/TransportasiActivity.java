@@ -1,11 +1,13 @@
 package id.ac.unej.ilkom.simulatour.Activities;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -69,6 +71,16 @@ public class TransportasiActivity extends AppCompatActivity {
         adapter = new TransportasiAdapter(getApplicationContext(), list);
         listView.setAdapter(adapter);
         getTransportasi();
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Transportasi t = list.get(i);
+                Intent intent = new Intent(TransportasiActivity.this, TransportasiDetailActivity.class);
+                intent.putExtra("transportasi",t);
+                startActivity(intent);
+            }
+        });
     }
 
     private void getTransportasi() {
@@ -97,9 +109,7 @@ public class TransportasiActivity extends AppCompatActivity {
                                 m.setNamaTempat(objWisata.getString("nama_tempat"));
                                 m.setFoto(BaseApi.imageURL + objWisata.getString("foto"));
                                 m.setHarga(objWisata.getString("harga"));
-//                                m.setMenuKhas(objWisata.getString("menu_khas"));
-//                                m.setAlamat(objWisata.getString("alamat"));
-//                                m.setAkses(objWisata.getString("akses"));
+                                m.setDeskripsi(objWisata.getString("deskripsi"));
 //                                Toast.makeText(MakananActivity.this, objWisata.getString("nama"), Toast.LENGTH_SHORT).show();
                                 list.add(m);
                             }

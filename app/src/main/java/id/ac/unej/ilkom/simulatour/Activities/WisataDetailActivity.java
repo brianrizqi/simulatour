@@ -1,5 +1,7 @@
 package id.ac.unej.ilkom.simulatour.Activities;
 
+import android.content.Intent;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -28,6 +30,9 @@ public class WisataDetailActivity extends AppCompatActivity {
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
+    @BindView(R.id.collapsing)
+    CollapsingToolbarLayout collapsingToolbarLayout;
+
     private ImageLoader imageLoader=AppController.getInstance().getImageLoader();
     private Wisata wisata;
     @Override
@@ -46,7 +51,6 @@ public class WisataDetailActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             toolbar.setNavigationOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -55,5 +59,6 @@ public class WisataDetailActivity extends AppCompatActivity {
                 }
             });
         }
+        txtDeskripsi.setText(wisata.getDeskripsi());
     }
 }

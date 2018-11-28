@@ -20,9 +20,6 @@ public class Sewa implements Serializable {
     @SerializedName("jenis_kendaraan")
     private String jenisKendaraan;
 
-    @SerializedName("akses")
-    private String akses;
-
     public Sewa() {
     }
 
@@ -73,14 +70,6 @@ public class Sewa implements Serializable {
         this.jenisKendaraan = jenisKendaraan;
     }
 
-    public String getAkses() {
-        return akses;
-    }
-
-    public void setAkses(String akses) {
-        this.akses = akses;
-    }
-
     @Override
     public String toString() {
         return
@@ -90,7 +79,6 @@ public class Sewa implements Serializable {
                         ",nama = '" + nama + '\'' +
                         ",foto = '" + foto + '\'' +
                         ",jenis_kendaraan = '" + jenisKendaraan + '\'' +
-                        ",akses = '" + akses + '\'' +
                         "}";
     }
 }

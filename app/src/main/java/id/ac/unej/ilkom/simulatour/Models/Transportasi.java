@@ -72,14 +72,6 @@ public class Transportasi implements Serializable {
     public void setDeskripsi(String deskripsi) {
         this.deskripsi = deskripsi;
     }
-
-    public String getAkses() {
-        return akses;
-    }
-
-    public void setAkses(String akses) {
-        this.akses = akses;
-    }
     @Override
     public String toString(){
         return
@@ -89,7 +81,6 @@ public class Transportasi implements Serializable {
                         ",nama_tempat = '" + namaTempat + '\'' +
                         ",foto = '" + foto + '\'' +
                         ",deskripsi = '" + deskripsi + '\'' +
-                        ",akses = '" + akses + '\'' +
                         "}";
     }
 }

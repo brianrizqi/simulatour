@@ -23,8 +23,8 @@
             app:expandedTitleMarginStart="48dp"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-            <ImageView
-                android:id="@+id/main_backdrop"
+            <com.android.volley.toolbox.NetworkImageView
+                android:id="@+id/img"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fitsSystemWindows="true"
@@ -39,12 +39,6 @@
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
-    <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/swipeDetailSchedule"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </android.support.v4.widget.SwipeRefreshLayout>
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -52,6 +46,8 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:padding="10dp">
         <TextView
+            android:textSize="20dp"
+            android:id="@+id/txtDeskripsi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="asdasd"

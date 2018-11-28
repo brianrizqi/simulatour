@@ -1,11 +1,13 @@
 package id.ac.unej.ilkom.simulatour.Activities;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -70,6 +72,16 @@ public class MakananActivity extends AppCompatActivity {
         adapter = new MakananAdapter(this, list);
         listView.setAdapter(adapter);
         getMakanan();
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Makanan m = list.get(i);
+                Intent intent = new Intent(MakananActivity.this,MakananDetailActivity.class);
+                intent.putExtra("makanan",m);
+                startActivity(intent);
+            }
+        });
     }
     public void getMakanan() {
         pDialog = new ProgressDialog(this);
@@ -89,7 +101,6 @@ public class MakananActivity extends AppCompatActivity {
                         try {
                             JSONObject obj = new JSONObject(response);
                             JSONArray jsonArray = obj.getJSONArray("data");
-//                            Toast.makeText(MakananActivity.this, jsonArray.length(), Toast.LENGTH_SHORT).show();
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject objWisata = jsonArray.getJSONObject(i);
                                 final Makanan m = new Makanan();
@@ -97,10 +108,8 @@ public class MakananActivity extends AppCompatActivity {
                                 m.setNama(objWisata.getString("nama"));
                                 m.setFoto(BaseApi.imageURL + objWisata.getString("foto"));
                                 m.setHarga(objWisata.getString("harga"));
-//                                m.setMenuKhas(objWisata.getString("menu_khas"));
-//                                m.setAlamat(objWisata.getString("alamat"));
-//                                m.setAkses(objWisata.getString("akses"));
-//                                Toast.makeText(MakananActivity.this, objWisata.getString("nama"), Toast.LENGTH_SHORT).show();
+                                m.setMenuKhas(objWisata.getString("menu_khas"));
+                                m.setAlamat(objWisata.getString("alamat"));
                                 list.add(m);
                             }
                         } catch (JSONException e) {

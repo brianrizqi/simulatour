@@ -23,9 +23,6 @@ public class Makanan implements Serializable {
     @SerializedName("menu_khas")
     private String menuKhas;
 
-    @SerializedName("akses")
-    private String akses;
-
     public Makanan() {
     }
 
@@ -84,14 +81,6 @@ public class Makanan implements Serializable {
         this.menuKhas = menuKhas;
     }
 
-    public void setAkses(String akses) {
-        this.akses = akses;
-    }
-
-    public String getAkses() {
-        return akses;
-    }
-
     @Override
     public String toString() {
         return
@@ -102,7 +91,6 @@ public class Makanan implements Serializable {
                         ",foto = '" + foto + '\'' +
                         ",alamat = '" + alamat + '\'' +
                         ",menu_khas = '" + menuKhas + '\'' +
-                        ",akses = '" + akses + '\'' +
                         "}";
     }
 }

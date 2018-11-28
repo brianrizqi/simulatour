@@ -96,9 +96,7 @@ public class SewaActivity extends AppCompatActivity {
                                 m.setNama(objWisata.getString("nama"));
                                 m.setFoto(BaseApi.imageURL + objWisata.getString("foto"));
                                 m.setHarga(objWisata.getString("harga"));
-//                                m.setMenuKhas(objWisata.getString("menu_khas"));
-//                                m.setAlamat(objWisata.getString("alamat"));
-//                                m.setAkses(objWisata.getString("akses"));
+                                m.setJenisKendaraan(objWisata.getString("jenis_kendaraan"));
 //                                Toast.makeText(MakananActivity.this, objWisata.getString("nama"), Toast.LENGTH_SHORT).show();
                                 list.add(m);
                             }
