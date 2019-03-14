@@ -20,7 +20,7 @@ public class BaseApi {
 
 
 
-    public static final String BaseURL = "http://helloworlds.me/simulatour/";
+    public static final String BaseURL = "https://onestep.id/simulatour/";
 
 
     public static final String getAllWisata=BaseURL+"paket.php?fun=get_all_wisata";
