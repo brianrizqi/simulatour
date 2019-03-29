@@ -9,12 +9,14 @@ import android.widget.RelativeLayout;
 
 import id.ac.unej.ilkom.simulatour.BottomNavigationHelper;
 import id.ac.unej.ilkom.simulatour.Fragments.HomeFragment;
+import id.ac.unej.ilkom.simulatour.Fragments.PemesananFragment;
+import id.ac.unej.ilkom.simulatour.Fragments.ProfileFragment;
 import id.ac.unej.ilkom.simulatour.R;
 import id.ac.unej.ilkom.simulatour.Fragments.SimulatorFragment;
 
 public class MainActivity extends AppCompatActivity {
     RelativeLayout fragment;
-    android.support.v4.app.Fragment home, simulator;
+    android.support.v4.app.Fragment home, simulator, pemesanan,profile;
 
     private BottomNavigationView.OnNavigationItemSelectedListener listener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -34,6 +36,20 @@ public class MainActivity extends AppCompatActivity {
                     if (fragment == null) {
                         simulator = new SimulatorFragment();
                         fragment = simulator;
+                    }
+                    break;
+                case R.id.navigation_pemesanan:
+                    fragment = pemesanan;
+                    if (fragment == null) {
+                        pemesanan = new PemesananFragment();
+                        fragment = pemesanan;
+                    }
+                    break;
+                case R.id.navigation_profile:
+                    fragment = profile;
+                    if (fragment == null) {
+                        profile = new ProfileFragment();
+                        fragment = profile;
                     }
                     break;
             }

@@ -4,13 +4,9 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,32 +33,26 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import id.ac.unej.ilkom.simulatour.Adapters.SimulasiAdapter;
 import id.ac.unej.ilkom.simulatour.Models.Simulasi;
-import id.ac.unej.ilkom.simulatour.Models.Wisata;
 import id.ac.unej.ilkom.simulatour.Networks.AppController;
 import id.ac.unej.ilkom.simulatour.Networks.BaseApi;
+import id.ac.unej.ilkom.simulatour.Fragments.Pemesanan;
 import id.ac.unej.ilkom.simulatour.R;
 
 public class SimulatorActivity extends AppCompatActivity {
     @BindView(R.id.listSimulasi)
-    ListView listView;
-    @BindView(R.id.toolbar)
-    Toolbar toolbar;
-    @BindView(R.id.titleMain)
-    Button button;
+    RecyclerView listView;
     @BindView(R.id.totalHarga)
     TextView txtTotalHarga;
     @BindView(R.id.error)
     ImageView txtError;
 
 
-
-    private String jumlahHari,jumlahUang,tranport;
+    private String jumlahHari, jumlahUang, tranport;
 
 
     private SimulasiAdapter adapter;
     private List<Simulasi> list;
     private ProgressDialog pDialog;
-
 
 
     @Override
@@ -71,24 +61,25 @@ public class SimulatorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_simulator);
         ButterKnife.bind(this);
 
-        button.setText("Simulasi");
+//        button.setText("Simulasi");
 
         jumlahUang = getIntent().getStringExtra("jumlahUang");
         jumlahHari = getIntent().getStringExtra("jumlahHari");
         tranport = getIntent().getStringExtra("transport");
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    onBackPressed();
-                    finish();
-                }
-            });
-        }
+//        setSupportActionBar(toolbar);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        if (getSupportActionBar() != null) {
+//            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    onBackPressed();
+//                    finish();
+//                }
+//            });
+//        }
         list = new ArrayList<>();
+        listView.setHasFixedSize(true);
 
         adapter = new SimulasiAdapter(this, list);
         listView.setAdapter(adapter);
@@ -103,7 +94,7 @@ public class SimulatorActivity extends AppCompatActivity {
             }
         });*/
 
-        getSimulasi(jumlahUang,jumlahHari);
+        getSimulasi(jumlahUang, jumlahHari);
 
 
     }
@@ -123,9 +114,7 @@ public class SimulatorActivity extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Log.d(String.valueOf(this), response.toString());
-                        hidePDialog();
-                        Double totalHarga=0.0;
+                        Double totalHarga = 0.0;
 
                         try {
                             JSONObject obj = new JSONObject(response);
@@ -139,31 +128,32 @@ public class SimulatorActivity extends AppCompatActivity {
                                 s.setLabel(objSimulasi.getString("label"));
                                 s.setJenis(objSimulasi.getString("jenis"));
 
-                                if (!objSimulasi.getString("label").equalsIgnoreCase("wisata")){
-                                    s.setKeterangan("(untuk "+hari+" hari)");
-                                     if (objSimulasi.getString("label").equalsIgnoreCase("makanan")){
+                                if (!objSimulasi.getString("label").equalsIgnoreCase("wisata")) {
+                                    s.setKeterangan("(untuk " + hari + " hari)");
+                                    if (objSimulasi.getString("label").equalsIgnoreCase("makanan")) {
                                         s.setKeterangan("(untuk 1 kali makan)");
-                                    } else if (objSimulasi.getString("label").equalsIgnoreCase("transportasi")){
-                                         s.setKeterangan("(dari "+objSimulasi.getString("nama")+" ke Tamansari)");
-                                     }
+                                    } else if (objSimulasi.getString("label").equalsIgnoreCase("transportasi")) {
+                                        s.setKeterangan("(dari " + objSimulasi.getString("nama") + " ke Tamansari)");
+                                    }
                                 }
 
-                                totalHarga +=Double.parseDouble(objSimulasi.getString("harga"));
+                                totalHarga += Double.parseDouble(objSimulasi.getString("harga"));
 
                                 list.add(s);
                             }
                             txtTotalHarga.setText(formatRupiah.format(totalHarga));
                         } catch (JSONException e) {
-                            Toast.makeText(SimulatorActivity.this, "Error "+ e.getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SimulatorActivity.this, "Error " + e.getMessage(), Toast.LENGTH_SHORT).show();
                             e.printStackTrace();
                         }
                         adapter.notifyDataSetChanged();
+                        hidePDialog();
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 VolleyLog.d(String.valueOf(this), "Error: " + error.getMessage());
-                Toast.makeText(SimulatorActivity.this, "Error "+ error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(SimulatorActivity.this, "Error " + error.getMessage(), Toast.LENGTH_SHORT).show();
                 listView.setVisibility(View.GONE);
                 txtError.setVisibility(View.VISIBLE);
 
@@ -177,17 +167,21 @@ public class SimulatorActivity extends AppCompatActivity {
                 map.put("id_user", "1");
                 map.put("token", "2b6898a282eece7bae4cdb706d4dcb1203433eee69d7ab317eaa081737ee5636");
 
-                map.put("durasi",hari);
-                map.put("harga",uang);
-                map.put("id_transportasi",tranport);
+                map.put("durasi", hari);
+                map.put("harga", uang);
+                map.put("id_transportasi", tranport);
                 return map;
             }
         };
         AppController.getInstance().addToRequestQueue(stringRequest);
     }
+
     @OnClick(R.id.btnReSimulate)
-    public void reSimulasi(View view){
-        onBackPressed();
+    public void reSimulasi(View view) {
+//        onBackPressed();
+        Intent i = new Intent(SimulatorActivity.this, Pemesanan.class);
+        startActivity(i);
+        finish();
     }
 
     @Override

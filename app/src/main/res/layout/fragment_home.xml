@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,244 +7,134 @@
     android:orientation="vertical"
     tools:context=".Fragments.HomeFragment">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="200dp">
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <id.ac.unej.ilkom.simulatour.SliderView
-                android:id="@+id/sliderView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-            </id.ac.unej.ilkom.simulatour.SliderView>
-        </FrameLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/bg_slider" />
-        <LinearLayout
-            android:id="@+id/pagesContainer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_gravity="bottom"
-            android:layout_marginBottom="8dp"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"/>
-    </RelativeLayout>
-
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="5dp">
+        android:orientation="vertical"
+        android:padding="10dp">
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/wisata"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            app:cardBackgroundColor="#fff"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="5dp">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+        <TextView
+            android:id="@+id/hi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/nunito_font"
+            android:text="Hi"
+            android:textColor="#333" />
 
-                <ImageButton
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="12dp"
-                    android:background="@drawable/circle_red"
-                    android:src="@drawable/ic_terrain_black_24dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_font"
+            android:text="Mau Kemana Hari ini?"
+            android:textColor="#333" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:text="Wisata"
-                    android:textColor="#333" />
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/searchview"
+            android:drawableStart="@drawable/ic_search_black_24dp"
+            android:drawableLeft="@drawable/ic_search_black_24dp"
+            android:hint="Cari Destinasi"
+            android:inputType="textCapWords"
+            android:padding="10dp"
+            android:textSize="14sp" />
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/penginapan"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@id/wisata"
-            app:cardBackgroundColor="#fff"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="5dp">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="Destinasi Favorit"
+                android:textColor="#333" />
 
-                <ImageButton
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="12dp"
-                    android:background="@drawable/circle_yellow"
-                    android:src="@drawable/ic_hotel_black_24dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Selengkapnya"
+                android:id="@+id/wisataLengkap"
+                android:textColor="@color/colorPrimary" />
+        </RelativeLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:text="Penginapan"
-                    android:textColor="#333" />
-            </LinearLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_des_fav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+            tools:listitem="@layout/list_destinasi_fav">
 
-        </android.support.v7.widget.CardView>
+        </android.support.v7.widget.RecyclerView>
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/transportasi"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@id/penginapan"
-            app:cardBackgroundColor="#fff"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="5dp">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="Penginapan Favorit"
+                android:textColor="#333" />
 
-                <ImageButton
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="12dp"
-                    android:background="@drawable/circle_green"
-                    android:src="@drawable/ic_directions_bus_black_24dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Selengkapnya"
+                android:id="@+id/penginapanLengkap"
+                android:textColor="@color/colorPrimary" />
+        </RelativeLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:text="Transportasi"
-                    android:textColor="#333" />
-            </LinearLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_penginapan_fav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+            tools:listitem="@layout/list_penginapan_fav">
 
-        </android.support.v7.widget.CardView>
+        </android.support.v7.widget.RecyclerView>
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/makanan"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:layout_below="@id/wisata"
-            android:layout_marginTop="20dp"
-            app:cardBackgroundColor="#fff"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="5dp">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="Makanan Favorit"
+                android:textColor="#333" />
 
-                <ImageButton
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="12dp"
-                    android:background="@drawable/circle_purple"
-                    android:src="@drawable/ic_restaurant_menu_black_24dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Selengkapnya"
+                android:textColor="@color/colorPrimary" />
+        </RelativeLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:text="Makanan"
-                    android:textColor="#333" />
-            </LinearLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_makanan_fav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+            tools:listitem="@layout/list_penginapan_fav">
 
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/sewa"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:layout_below="@id/wisata"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_toRightOf="@id/makanan"
-            app:cardBackgroundColor="#fff"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="5dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <ImageButton
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="12dp"
-                    android:background="@drawable/circle_blue"
-                    android:src="@drawable/ic_directions_car_black_24dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:text="Sewa Kendaraan"
-                    android:textColor="#333" />
-            </LinearLayout>
-
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/about"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:layout_below="@id/wisata"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_toRightOf="@id/sewa"
-            app:cardBackgroundColor="#fff"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="5dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <ImageButton
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="12dp"
-                    android:background="@drawable/circle"
-                    android:src="@drawable/ic_info_outline_black_24dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:text="About"
-                    android:textColor="#333" />
-            </LinearLayout>
-
-        </android.support.v7.widget.CardView>
-    </RelativeLayout>
-</LinearLayout>
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+</ScrollView>

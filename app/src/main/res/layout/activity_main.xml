@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,20 +7,23 @@
     tools:context=".Activities.MainActivity">
 
     <RelativeLayout
+        android:id="@+id/fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/fragment"
         android:layout_above="@id/bottomNav"
         android:background="#FFF">
 
     </RelativeLayout>
+
     <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottomNav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="?android:attr/windowBackground"
-        android:id="@+id/bottomNav"
-        app:menu="@menu/nav">
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/nav"
+        tools:ignore="MissingConstraints">
 
     </android.support.design.widget.BottomNavigationView>
 

@@ -21,6 +21,7 @@ public class BaseApi {
 
 
     public static final String BaseURL = "https://onestep.id/simulatour/";
+//    public static final String BaseURL = "http://10.100.200.119/simulatour/";
 
 
     public static final String getAllWisata=BaseURL+"paket.php?fun=get_all_wisata";

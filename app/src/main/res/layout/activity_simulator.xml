@@ -8,38 +8,53 @@
     android:orientation="vertical"
     tools:context=".Activities.SimulatorActivity">
 
-    <RelativeLayout
-        android:id="@+id/relay"
-        android:layout_width="match_parent"
+    <!--<RelativeLayout-->
+    <!--android:id="@+id/relay"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:padding="10dp">-->
+
+    <!--<android.support.v7.widget.Toolbar-->
+    <!--android:id="@+id/toolbar"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="?attr/actionBarSize"-->
+    <!--android:background="#FFF"-->
+    <!--app:theme="@style/ToolbarTheme" />-->
+
+    <!--<Button-->
+    <!--android:id="@+id/titleMain"-->
+    <!--android:layout_width="150dp"-->
+    <!--android:layout_height="40dp"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:layout_marginTop="8dp"-->
+    <!--android:background="@drawable/button"-->
+    <!--android:text="Simulasi"-->
+    <!--android:textColor="#FFF" />-->
+
+    <!--</RelativeLayout>-->
+
+    <TextView
+        android:id="@+id/txtPesan"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="10dp">
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/nunito_font"
+        android:text="Paket yang Tersedia"
+        android:textColor="#333"
+        android:textSize="20dp" />
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="#FFF"
-            app:theme="@style/ToolbarTheme" />
-
-        <Button
-            android:id="@+id/titleMain"
-            android:layout_width="150dp"
-            android:layout_height="40dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/button"
-            android:text="Simulasi"
-            android:textColor="#FFF" />
-
-    </RelativeLayout>
-    <ListView
+    <android.support.v7.widget.RecyclerView
         android:id="@+id/listSimulasi"
         android:layout_width="match_parent"
-        android:layout_height="438dp"
-        android:layout_below="@id/relay"
-        android:layout_marginBottom="5dp">
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtPesan"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+        tools:listitem="@layout/list_simulasi">
 
-    </ListView>
+    </android.support.v7.widget.RecyclerView>
 
 
     <ImageView
@@ -47,8 +62,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@mipmap/error"
-        android:visibility="gone"
-        />
+        android:visibility="gone" />
 
 
     <RelativeLayout
@@ -71,12 +85,13 @@
 
         <Button
             android:id="@+id/btnReSimulate"
-            android:layout_width="150dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_marginRight="10dp"
-            android:background="@color/colorPrimary"
-            android:text="Re-Simulasi"
+            android:background="@drawable/button"
+            android:fontFamily="@font/nunito_font"
+            android:text="Pesan"
             android:textColor="#fff" />
 
 
